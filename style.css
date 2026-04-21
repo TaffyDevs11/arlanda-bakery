@@ -1,0 +1,488 @@
+/* GENERAL STYLES */
+:root {
+    --primary-color: #f7e6e9; /* Warm Pink from flyer */
+    --accent-color: #8d6247; /* Caramel from logo script */
+    --dark-text: #333333;
+    --light-text: #ffffff;
+    --border-color: #e0e0e0;
+    
+    --script-font: 'Dancing Script', cursive;
+    --body-font: 'Playfair Display', serif;
+}
+
+html {
+    /* **SMOOTH SCROLL EFFECT** */
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+    color: var(--dark-text);
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3, h4, p {
+    margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.script-font {
+    font-family: var(--script-font);
+    color: var(--accent-color);
+}
+
+/* PRE-LOADER STYLES */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; /* Ensure it's on top */
+    transition: opacity 0.5s ease;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-logo {
+    width: 500px;
+    animation: pulse 1.5s infinite; /* Example animation */
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.8; }
+    50% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* HEADER STYLES */
+header {
+    background-color: var(--primary-color);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-logo {
+    height: 100px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* HERO SECTION */
+#hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    background-image: url('bakery-illustration.png'); /* The background from flyer */
+    background-size: cover;
+    background-position: center;
+    color: var(--light-text);
+    position: relative;
+    text-align: center;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(247, 230, 233, 0.8) 0%, rgba(255, 255, 255, 0.2) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+#hero h1 {
+    font-family: var(--script-font);
+    font-size: 4em;
+    color: var(--accent-color);
+    margin-bottom: 0.2em;
+}
+
+#hero p {
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-bottom: 1.5em;
+    color: #333333;
+}
+
+#hero p .accent {
+    font-weight: 600;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.cta-button:hover {
+    background-color: #6e4c3a;
+}
+
+/* ABOUT SECTION */
+#about {
+    padding: 60px 0;
+}
+
+.about-flex {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.about-image {
+    flex-shrink: 0;
+    max-width: 400px;
+}
+
+.etching {
+    opacity: 0.7;
+}
+
+/* MENU SECTION */
+#menu {
+    background-color: #fafafa;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#menu h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+.menu-category h3 {
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+    color: #555555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.product-card {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.product-card img {
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card h4 {
+    color: #444444;
+}
+
+.product-card .price {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.whatsapp-cta {
+    display: block;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #25D366;
+    color: var(--light-text);
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.whatsapp-cta:hover {
+    background-color: #1eb956;
+}
+
+.custom-orders {
+    background-color: var(--primary-color);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.custom-orders h4 {
+    margin-bottom: 10px;
+}
+
+.whatsapp-cta-inline {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #25D366;
+    color: var(--light-text);
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* CONTACT SECTION */
+#contact {
+    padding: 60px 0;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.contact-info .details,
+.contact-info .social-links {
+    margin-bottom: 30px;
+}
+
+.details p {
+    margin-bottom: 5px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #555555;
+    font-size: 0.9em;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+.main-phone {
+    font-size: 2em;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* FOOTER STYLES */
+footer {
+    background-color: #222222;
+    color: #aaaaaa;
+    padding: 30px 0;
+    font-size: 0.85em;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logo {
+    height: 40px;
+    opacity: 0.5;
+}
+
+/* FLOATING WHATSAPP BUTTON */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 0.9em;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+.whatsapp-float img {
+    height: 18px;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+@media (max-width: 768px) {
+    #hero h1 { font-size: 3em; }
+    #hero p { font-size: 1.2em; }
+    .about-flex { flex-direction: column; text-align: center; gap: 30px; }
+    .main-logo { height: 50px; }
+    nav ul { gap: 15px; }
+    .details { text-align: center; }
+}
+
+/* --- RESPONSIVE MOBILE STYLING --- */
+
+/* Targets Tablets and Large Phones (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Header & Navigation */
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .main-logo {
+        height: 55px;
+    }
+
+    nav ul {
+        gap: 15px;
+        font-size: 0.8em;
+    }
+
+    /* Hero Section */
+    #hero {
+        height: 60vh; /* Shorter height for mobile screens */
+    }
+
+    #hero h1 {
+        font-size: 2.8em;
+    }
+
+    #hero p {
+        font-size: 1.1em;
+        padding: 0 10px;
+    }
+
+    /* About Section */
+    .about-flex {
+        flex-direction: column-reverse; /* Put text above the illustration */
+        text-align: center;
+        gap: 20px;
+    }
+
+    .about-image {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    /* Product Grid */
+    .product-grid {
+        grid-template-columns: 1fr; /* Stack products in a single column */
+        gap: 20px;
+    }
+}
+
+/* Targets Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    #hero h1 {
+        font-size: 2.2em;
+    }
+
+    .script-font {
+        font-size: 1.8em;
+    }
+
+    /* Make buttons full width for easier tapping */
+    .whatsapp-cta, .cta-button, .whatsapp-cta-inline {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    /* Adjust the main phone number size so it doesn't wrap weirdly */
+    .main-phone {
+        font-size: 1.4em;
+    }
+
+    /* Reposition Floating WhatsApp button for better thumb reach */
+    .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 15px;
+        font-size: 0.8em;
+    }
+
+    /* Contact Details */
+    .details {
+        font-size: 0.9em;
+    }
+}
+
